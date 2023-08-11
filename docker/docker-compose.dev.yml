@@ -1,0 +1,15 @@
+version: "3.9"
+name: starlette_snippet
+
+services:
+  web:
+    image: "starlette_snippet:latest"
+    env_file:
+      - ../src/config/settings/.dev
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../:/code
