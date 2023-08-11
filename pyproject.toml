@@ -1,0 +1,52 @@
+[tool.poetry]
+name = "starlette-snippet"
+version = "0.1.0"
+description = ""
+authors = ["Alteian <Alteian@proton.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+starlette = "^0.31.0"
+uvicorn = "^0.23.2"
+gunicorn = "^21.2.0"
+strawberry-graphql = "^0.203.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+ruff = "^0.0.284"
+mypy = "^1.5.0"
+rich = "^13.5.2"
+libcst = "^1.0.1"
+pytest = "^7.4.0"
+
+[tool.ruff]
+ignore-init-module-imports = true
+line-length = 79
+
+[tool.ruff.per-file-ignores]
+
+[tool.ruff.isort]
+
+[tool.black]
+line-length = 79
+preview = true
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | __pycached__
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
